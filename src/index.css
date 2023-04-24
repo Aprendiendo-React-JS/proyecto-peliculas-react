@@ -14,7 +14,7 @@ body {
   
   display: grid;
   grid-template-areas:
-      "header nav nav nav"
+      "header nav nav web3"
       "content content content lateral"
       "footer footer footer footer"
   ;
@@ -63,7 +63,7 @@ body {
 .nav {
   grid-area: nav;
   background: white;
- 
+  
 }
 
 .nav > ul {
@@ -90,10 +90,40 @@ nav li {
 }
 
 .nav a:hover {
-  color:rgb(53, 157, 209);
+  color:#414fd4;
   transform: scale(1.1, 1.1);
   background: #fff;
   border-radius: 10px;
+}
+
+.web3 {
+  grid-area: web3;
+  
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  justify-content: flex-end;
+  margin-right:25px;
+}
+
+.web3 a{
+  text-decoration: none;
+  color: #000;
+  border: #454545 1px solid;
+  font-size: 18px;
+  font-size: 20px;
+  font-weight: lighter;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.web3 a:hover {
+  color:#414fd4; 
+  border: #414fd4 1px solid;
+  transform: scale(1.1, 1.1);
+  background: #fff;
 }
 
 /* Estilos Contenido Principal */
@@ -136,7 +166,9 @@ input[type="submit"] {
   font-weight: 500;
   cursor: pointer;
   transition: all 300ms;
+  
 }
+
 
 .pelicula-item .edit {
   margin-right: 7px;
@@ -170,8 +202,8 @@ input[type="submit"] {
   box-shadow: 0 0 6px #ddd;
 }
 
-.lateral input[type="text"],
-.lateral textarea {
+input[type="text"],
+textarea {
  display: block;
  margin: 0 auto;
  margin-top: 15px;
@@ -183,6 +215,14 @@ input[type="submit"] {
  opacity: 4;
  outline: 0;
  border-color: transparent;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px #ddd;
 }
 
 /* Estilos para el pie de pagina */
@@ -217,6 +257,13 @@ input[type="submit"] {
       width: 80%;
   }
 }
+
+.no-encontrado {
+  text-align: center;
+  font-size: 17px;
+  color: #fa0a0a;
+  margin-top: 5px;
+} 
 
 
 

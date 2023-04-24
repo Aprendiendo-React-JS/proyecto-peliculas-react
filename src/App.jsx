@@ -1,8 +1,15 @@
+import { useState } from "react"
+import { Buscador } from "./components/Buscador"
+import { CrearPeliculas } from "./components/CrearPeliculas"
+import { Listado } from "./components/Listado"
+
 function App() {
 
+    const [listadoState, setListadoState] = useState([])
 
   return (
         <div className="layaut">
+          
           {/* Cabecera */}
           <header className="header">
               <div className="logo">
@@ -21,70 +28,28 @@ function App() {
               </ul>
           </nav>
 
+          <div className="web3"><a href="/#">Conect web3</a></div>
+
           {/* Contenido principal*/}
           <section className="content">
-              {/* Aqui van las peliculas */}
-              <article className="pelicula-item">
-                  <h2>Titulo pelicula</h2>
-                  <p className="description">Lorem ipsum dolor sit.</p>
-                  <button className="edit">Editar</button>
-                  <button className="delete">Borrar</button>
-              </article>
-
-              <article className="pelicula-item">
-                  <h2>Titulo pelicula</h2>
-                  <p className="description">Lorem ipsum dolor sit.</p>
-                  <button className="edit">Editar</button>
-                  <button className="delete">Borrar</button>
-              </article>
-
-              <article className="pelicula-item">
-                  <h2>Titulo pelicula</h2>
-                  <p className="description">Lorem ipsum dolor sit.</p>
-                  <button className="edit">Editar</button>
-                  <button className="delete">Borrar</button>
-              </article>
-
-              <article className="pelicula-item">
-                  <h2>Titulo pelicula</h2>
-                  <p className="description">Lorem ipsum dolor sit.</p>
-                  <button className="edit">Editar</button>
-                  <button className="delete">Borrar</button>
-              </article>
-
-              <article className="pelicula-item">
-                  <h2>Titulo pelicula</h2>
-                  <p className="description">Lorem ipsum dolor sit.</p>
-                  <button className="edit">Editar</button>
-                  <button className="delete">Borrar</button>
-              </article>
-
-              <article className="pelicula-item">
-                  <h2>Titulo pelicula</h2>
-                  <p className="description">Lorem ipsum dolor sit.</p>
-                  <button className="edit">Editar</button>
-                  <button className="delete">Borrar</button>
-              </article>
-
+              {/* Aqui va el listado de peliculas */}
+              <Listado
+              listadoState={listadoState} 
+              setListadoState={setListadoState}
+              />
           </section>
 
           <aside className="lateral">
               {/* Aqui van los widgets */}
-              <div className="search">
-                  <h3 className="title">Widget 1</h3>
-                  <form>
-                      <input type="text" placeholder="Buscar"/>
-                      <button>Buscar</button>
-                  </form>
-              </div>
-              <div className="add">
-                  <h3>Añadir pelicula</h3>
-                  <form>
-                      <input type="text" placeholder="Titulo"/>
-                      <textarea name="" id="" cols="30" rows="10" placeholder="Descripcion"></textarea>
-                      <input type="submit" value="Guardar"/>
-                  </form>
-              </div>
+              {/* Buscador */}
+              <Buscador
+                listadoState={listadoState} 
+                setListadoState={setListadoState}
+              />
+              {/* Form añadir peliculas */}
+              <CrearPeliculas
+                setListadoState={setListadoState}
+              />
           </aside>
 
           {/* Pie de pagina */}
